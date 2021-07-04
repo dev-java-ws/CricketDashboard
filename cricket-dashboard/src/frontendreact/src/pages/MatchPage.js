@@ -27,7 +27,7 @@ export const MatchPage = () => {
     <div className="MatchPage"> 
     	<h1> MatchPage </h1>
     	{
-    		matches.map(match => <MatchDetailCard  teamName={teamName}  match={match} />)}
+    		matches.map(match => <MatchDetailCard  teamName={teamName}  match={match}/>)}
 
     	}
     </div>
@@ -40,7 +40,8 @@ export const MatchPage = () => {
  * replace with
  *const response = await fetch(`http://localhost:8090/team/${teamName}/matches?year=2019`);
 
- * 
+ * rename App.css to App.scss after yarn add node-sass -D
+ * import in App.js App.scss
  * 
  */
  
