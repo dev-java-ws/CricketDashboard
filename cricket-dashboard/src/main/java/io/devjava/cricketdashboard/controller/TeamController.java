@@ -3,12 +3,14 @@
  */
 package io.devjava.cricketdashboard.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.devjava.cricketdashboard.model.Match;
@@ -45,6 +47,20 @@ public class TeamController {
 		return team;
 	}
 	
+	@GetMapping("/team/{teamName}/matches") //property its queried for is yr.. it can be with another prop later
+	public List<Match> getMatchesForTeam(@PathVariable String teamName, @RequestParam int year) {
+		LocalDate startDate = LocalDate.of(year, 1, 1);
+		LocalDate endDate = LocalDate.of(year + 1, 1, 1);
+		
+		List<Match> matches = this.matchRepository.getMatchesByTeamBetweenDates(teamName, startDate, endDate);
+		
+		/*
+		 * List<Match> matches = this.matchRepository.
+		 * getByTeam1AndDateBetweenOrTeam2AndDateBetweenOrderByDateDesc( teamName,
+		 * startDate, endDate, teamName, startDate, endDate);
+		 */
+		return matches;
+	}
 	
 }
 
