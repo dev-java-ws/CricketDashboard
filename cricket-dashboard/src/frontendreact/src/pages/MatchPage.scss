@@ -1,0 +1,15 @@
+.MatchPage {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	border-style: dotted;
+
+	.year-selector {
+		justify-self: left;
+		
+	}
+	
+	.match-detail {
+		justify-style: end;
+	
+	}
+}

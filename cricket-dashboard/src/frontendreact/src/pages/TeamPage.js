@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { MatchDetailCard } from '../component/MatchDetailCard';
 import { MatchSmallCard } from '../component/MatchSmallCard';
 import { PieChart } from 'react-minimal-pie-chart';
+import { Link } from 'react-router-dom';
 
 import './TeamPage.scss';
 
@@ -45,7 +46,10 @@ export const TeamPage = () => {
     		<MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
     	 </div>
     	 {team.matches.slice(1).map(match => <MatchSmallCard  teamName={team.teamName}  match={match} />)}
-    	 <div>More</div>
+    	 <div>
+    	    <Link to={`/team/${teamName}/matches/${process.env.REACT_APP_END_YEAR}`} >
+    	    More
+    	    </Link></div>
     </div>
   );
 }
@@ -54,7 +58,7 @@ export const TeamPage = () => {
 // 	 call to useEffect   	 when component loads which is [] array, call fetchMatches, calls url and sets response
 //use {team.teamName} JSX to render values
     	 
-   //to send to backend use react router http://localhost:3000/teams/Chennai%20Super%20Kings 
+   //to send to backend use react router http://localhost:3000/team/Chennai%20Super%20Kings 
     	 
     	//adding div for <h1> to add css class
          
