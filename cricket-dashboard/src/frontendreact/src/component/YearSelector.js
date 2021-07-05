@@ -12,7 +12,7 @@ export const YearSelector = ({teamName}) => {
 	
 	return (
 			<dl className="years-list">
-				{ years.map(year => ( <di>
+				{ years.map(year => ( <di key={year}>
 				  	<Link to={`/team/${teamName}/matches/${year}`} > {year}</Link>
 				  </di>
 				)

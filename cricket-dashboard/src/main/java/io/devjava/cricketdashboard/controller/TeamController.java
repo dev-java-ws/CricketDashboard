@@ -71,3 +71,6 @@ public class TeamController {
 
 
 //https://spring.io/guides/gs/batch-processing/
+//    "build": "react-scripts build xcopy .\\build\\* ..\\main\\resources\\public\\ /s /y",
+//in package.json copies all contents in reacts build folder after building to sb project
+//src/main/resources/public save with out asking
